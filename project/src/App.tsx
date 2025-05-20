@@ -14,7 +14,7 @@ function App() {
     const checkStatus = async () => {
       if (currentQueryId && isProcessing) {
         try {
-          const response = await fetch(`http://localhost:8000/api/query/status/${currentQueryId}`);
+          const response = await fetch(`https://flight-booking-data-analysis-4.onrender.com/api/query/status/${currentQueryId}`);
           if (!response.ok) {
             console.error('Error checking query status:', response.status);
             setIsProcessing(false);
@@ -49,7 +49,7 @@ function App() {
   const handleVisualizationUpdate = async (query: string) => {
     try {
       setIsProcessing(true);
-      const response = await fetch('http://localhost:8000/api/query', {
+      const response = await fetch('https://flight-booking-data-analysis-4.onrender.com/api/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),

@@ -15,7 +15,7 @@ app = FastAPI(title="Flight Data Analysis API")
 # CORS configuration to allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], 
+    allow_origins=["http://localhost:5173", "https://flight-booking-data-analysis-4.onrender.com"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

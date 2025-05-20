@@ -1,6 +1,6 @@
 import { ApiResponse } from '../types';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://flight-booking-data-analysis-4.onrender.com';
 
 export const submitQuery = async (query: string): Promise<ApiResponse> => {
     try {
