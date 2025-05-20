@@ -32,8 +32,8 @@ class FlightDataProcessor:
         'flght#': 'flight_number',
         'departure_dt': 'departure_dt',
         'arrival_dt': 'arrival_dt',
-        'dep_time': 'departure_time',      # Add mapping for departure time if needed
-        'arrivl_time': 'arrival_time',        # Add mapping for arrival time if needed
+        'dep_time': 'departure_time',
+        'arrivl_time': 'arrival_time',
         'booking_cd': 'booking_code',
         'passngr_nm': 'passenger_name',
         'seat_no': 'seat_number',
@@ -59,14 +59,13 @@ class FlightDataProcessor:
         'emergency_exit_row': 'is_emergency_exit',
         'number_of_stops': 'number_of_stops',
         'reward_program_member': 'is_reward_member'
-        # Add all other column mappings here based on your CSV file
     }
 
     def __init__(self):
         self.bookings_df = None
         self.failure_df = None
         self.initialized = False
-        self.AIRLINE_ID_TO_NAME = FlightDataProcessor.AIRLINE_ID_TO_NAME # Make it accessible as an instance attribute
+        self.AIRLINE_ID_TO_NAME = FlightDataProcessor.AIRLINE_ID_TO_NAME 
 
     def load_data(self, bookings_path: str, failures_path: str):
         """Load flight booking and failure data."""
