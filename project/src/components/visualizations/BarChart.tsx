@@ -68,13 +68,3 @@ const BarChart: React.FC<BarChartProps> = ({ data, title }) => {
 };
 
 export default BarChart;
-
-/* File Explanation:
- * This file implements the BarChart component using Recharts library.
- * Key features:
- * 1. Displays data in a bar chart format
- * 2. Includes grid lines for better readability
- * 3. Interactive tooltips for detailed information
- * 4. Rounded corners on bars for modern look
- * 5. Responsive container that adapts to parent size
- */

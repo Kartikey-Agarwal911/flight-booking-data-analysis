@@ -61,8 +61,7 @@ class QueryProcessor:
             'reward_program_distribution': r'(?:what is|show me) the distribution of reward program members vs\. non-members',
             'average_fare_per_airline': r'(?:what is|show me) the average fare for each airline',
             'average_duration_per_airline': r'(?:what is|show me) the average duration of flights for each airline',
-            'aisle_seat_distribution': r'(?:what is|show me) the distribution of aisle seat preferences', # For "What is the distribution of aisle seat preferences?"
-            # Add patterns for other questions as you test them
+            'aisle_seat_distribution': r'(?:what is|show me) the distribution of aisle seat preferences',
         }
 
     def process_query(self, query: str) -> Dict:
@@ -122,7 +121,6 @@ class QueryProcessor:
                 return self._handle_average_duration_per_airline()
             elif pattern_name == 'aisle_seat_distribution':
                 return self._handle_aisle_seat_distribution()
-            # Add handlers for other patterns
         except Exception as e:
             return {'type': 'error', 'message': f"Error processing query: {e}"}
 

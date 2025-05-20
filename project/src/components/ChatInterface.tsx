@@ -145,14 +145,3 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onVisualizationUpdate, is
 };
 
 export default ChatInterface;
-
-/* File Explanation:
- * This file implements the ChatInterface component which provides the main interaction
- * point for users to query flight data. Key features:
- * 1. Real-time message history with user and system messages
- * 2. Integration with the polling state hook for async responses
- * 3. Automatic scrolling to latest messages
- * 4. Loading states and error handling
- * 5. Responsive design with Tailwind CSS
- * The component manages the chat state and coordinates with the visualization panel.
- */

@@ -84,12 +84,12 @@ class FlightDataProcessor:
         """Load flight booking data from CSV."""
         try:
             self.bookings_df = pd.read_csv(bookings_path)
-            self.bookings_df.rename(columns=COLUMN_MAPPINGS, inplace=True)  # Apply mappings here
+            self.bookings_df.rename(columns=FlightDataProcessor.COLUMN_MAPPINGS, inplace=True)
             # Convert date columns to datetime
             self.bookings_df['departure_dt'] = pd.to_datetime(self.bookings_df['departure_dt'])
             self.bookings_df['arrival_dt'] = pd.to_datetime(self.bookings_df['arrival_dt'])
 
-            self.bookings_df['airline_name'] = self.bookings_df['airline_id'].map(self.AIRLINE_ID_TO_NAME).fillna('Unknown')
+            self.bookings_df['airline_name'] = self.bookings_df['airline_id'].map(FlightDataProcessor.AIRLINE_ID_TO_NAME).fillna('Unknown')
 
             print(f"Loaded {len(self.bookings_df)} flight bookings")
         except Exception as e:
@@ -100,7 +100,6 @@ class FlightDataProcessor:
     def _load_failures(self, failures_path: str):
         """Load flight failure data from CSV."""
         try:
-            # Read the CSV, skipping header rows and handling potential issues
             self.failure_df = pd.read_csv(failures_path, skiprows=6)
             self.failure_df.rename(columns={'Date/Time Opened': 'opened_at',
                                             'Account Name': 'account_name',
@@ -235,27 +234,3 @@ class FlightDataProcessor:
 
 # Create an instance of the processor
 flight_data = FlightDataProcessor()
-
-# File Explanation:
-"""
-This file implements the FlightDataProcessor class which handles all flight booking data operations.
-Key features:
-1. Data loading and preprocessing from the real CSV file
-2. Uses a hardcoded mapping for airline names
-3. Methods for various data analysis tasks based on the available columns:
-    - Counts of airlines
-    - Top departure and arrival dates (Bar Chart)
-    - Distribution of flight classes (Pie Chart)
-    - Descriptive statistics of fare (Text)
-    - Most common extras (Bar Chart)
-    - Counts of booking statuses (Bar Chart)
-    - Most frequent gates and terminals (Bar Chart)
-    - Counts of layovers (Bar Chart)
-    - Most frequent layover locations (Bar Chart)
-    - Counts of aircraft types (Bar Chart)
-    - Distribution of reward program members (Pie Chart)
-    - Average fare per airline (Bar Chart)
-    - Average duration per airline (Bar Chart)
-    - Distribution of aisle seat preferences (Pie Chart)
-The class ensures data is properly loaded and preprocessed before any analysis is performed.
-"""

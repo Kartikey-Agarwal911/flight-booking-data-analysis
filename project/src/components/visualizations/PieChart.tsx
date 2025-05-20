@@ -68,13 +68,3 @@ const PieChart: React.FC<PieChartProps> = ({ data, title }) => {
 };
 
 export default PieChart;
-
-/* File Explanation:
- * This file implements the PieChart component using Recharts library.
- * Key features:
- * 1. Displays data in a pie chart format
- * 2. Includes percentage labels on pie segments
- * 3. Interactive tooltips for detailed information
- * 4. Legend for identifying segments
- * 5. Custom color scheme for different segments
- */

@@ -81,13 +81,3 @@ const VisualizationPanel: React.FC<VisualizationPanelProps> = ({ data }) => {
 };
 
 export default VisualizationPanel;
-
-/* File Explanation:
- * This file implements the VisualizationPanel component which renders different
- * types of charts based on the API response. Key features:
- * 1. Supports multiple chart types (pie, bar, line, time series)
- * 2. Handles text and error responses
- * 3. Provides appropriate loading and empty states
- * 4. Responsive layout with consistent styling
- * The component acts as a container for different visualization components.
- */

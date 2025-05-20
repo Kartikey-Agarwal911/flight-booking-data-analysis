@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ChatInterface from './components/ChatInterface';
 import VisualizationPanel from './components/visualizations/VisualizationPanel';
 import { ApiResponse } from './types';
-// import { submitQuery, checkQueryStatus } from './services/api'; // Removed unused imports
 
 function App() {
   const [visualizationData, setVisualizationData] = useState<ApiResponse | null>(null);
@@ -81,7 +80,7 @@ function App() {
           <ChatInterface
             onVisualizationUpdate={handleVisualizationUpdate}
             isProcessing={isProcessing}
-            latestResponse={visualizationData} // Pass the response data
+            latestResponse={visualizationData}
           />
         </div>
 
